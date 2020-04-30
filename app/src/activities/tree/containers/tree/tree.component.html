@@ -1,0 +1,29 @@
+<div class="tree-container">
+    <div class="wrapper">
+
+        <div class="game">
+            <!-- Mettre un second router outlet ici -->
+
+            <setup *ngIf="display==='setup'" (submitted)="beginGame($event)"></setup>
+
+            <ng-template *ngIf="display==='plate'">
+                <counter [score]='score'></counter>
+
+                <div class="plate" >
+                    <div class="plate__wrapper">
+                        <!-- <tree-icon (touched)="onIconTouched()"></tree-icon> -->
+                        <ng-template #iconRef></ng-template> <!-- impossible : (touched)="onIconTouched()"-->
+                    </div>
+                </div>
+            </ng-template>
+
+            <!-- <result *ngIf="display==='setup'"></result> -->
+
+        </div>
+
+        <!-- <div class="nav">
+            <nav-bar></nav-bar>
+        </div> -->
+
+    </div>
+</div>

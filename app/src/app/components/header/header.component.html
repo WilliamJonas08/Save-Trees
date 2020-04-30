@@ -1,0 +1,10 @@
+<div class="app-header">
+    <div class="wrapper">
+        <!-- <img src="../../../assets/logout.svg"> -->
+        <div class="app-header__user-info" *ngIf="user?.authenticated">
+            <!-- safety check for the user beacause it's an observable and it might not be available -->
+            <span (click)="logoutUser()"></span>
+    
+        </div>
+    </div>
+</div>

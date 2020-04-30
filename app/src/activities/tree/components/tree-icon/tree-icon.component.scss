@@ -1,0 +1,25 @@
+.tree-icon__container {
+
+  background: white;
+  width: 100px;
+  height: 100px;
+  
+  border-radius: 50%;
+  border: 2px solid green;
+  // box-shadow: 0 3px 4px green;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
+
+  position: relative;
+
+  cursor: pointer;
+
+  .tree-icon {
+    background: url(../../../../assets/tree-icon.png) no-repeat;
+    background-size: contain;
+    width: 90%;
+    height: 90%;
+    //centrer dans le cercle
+    margin: 9px; 
+    margin-top: 2px;
+  }
+}

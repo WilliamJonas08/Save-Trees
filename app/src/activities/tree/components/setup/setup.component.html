@@ -1,0 +1,14 @@
+<div class="setup">
+    <div class="wrapper">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+            <label>
+                <h3>Select Difficulty</h3>
+                <setup-type formControlName="type"></setup-type>
+            </label>
+
+            {{form.value | json}}
+
+        </form>
+    </div>
+</div>>
