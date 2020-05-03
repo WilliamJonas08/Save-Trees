@@ -4,7 +4,7 @@ import { distinctUntilChanged, pluck } from 'rxjs/operators';
 import { User } from './auth/shared/services/auth.service';
 
 export interface State{
-    user:User[]
+    user:User
 }
 
 const state : State = {

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -8,34 +8,46 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AuthFormComponent implements OnInit {
 
+  @Input() // TODO : C'est tricher un peu .. mais je n'ai pas réussi avec le ng-content
+  type: string
+
   @Output()
   submitted = new EventEmitter<FormGroup>()
 
-  form = this.fb.group({
-    email: ['', Validators.email],
-    password: ['', Validators.required]
-  })
+  form
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    // On le définit dans le OnInit (et non pas directement dans la définition de la propriété form) afin d'avoir la donnée "type" disponible (pas disponible avant)
+    this.form = this.fb.group({
+      email: ['', Validators.email],
+      password: ['', Validators.required],
+      pseudo: [(this.type === "login") ? ' ' : '', Validators.required]
+    })
   }
 
   onSubmit() {
     if (this.form.valid) {
+      // console.log(this.form.value.pseudo)
       this.submitted.emit(this.form)
     }
   }
 
   // Validation
-  get passwordInvalid(){
+  get passwordInvalid() {
     const control = this.form.get('password')
     return (control.hasError("required") && control.touched)
   }
 
-  get emailFormat(){
+  get emailFormat() {
     const control = this.form.get('email')
     return control.hasError("email") && control.touched
+  }
+
+  get pseudoInvalid() {
+    const control = this.form.get('pseudo')
+    return (control.hasError("required") && control.touched)
   }
 
 }

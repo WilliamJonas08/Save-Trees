@@ -19,9 +19,9 @@ export class RegisterComponent implements OnInit {
   }
 
   async registerUser(event: FormGroup) {
-    const { email, password } = event.value //Object destructuring
+    const { email, password, pseudo } = event.value //Object destructuring
     try {
-      await this.authService.createUser(email, password)
+      await this.authService.createUser(email, password, pseudo)
       this.router.navigate(['/tree'])
     }
     catch (err) {

@@ -1,6 +1,6 @@
 <div>
     <app-header [user]="user$ |async" (logout)="onLogout()"></app-header>
-    <app-nav *ngIf="(user$ | async)?.authenticated"></app-nav>
+    <app-nav *ngIf="(user$ | async)?.authenticated" [pseudo]="(user$ | async)?.displayName"></app-nav>
     <div class="wrapper">
     <router-outlet></router-outlet>
     <!-- {{user$|async|json}} -->

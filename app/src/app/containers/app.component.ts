@@ -25,7 +25,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subscription = this.authService.auth$.subscribe() // Initiate the data flow for the subscription
-    this.user$ = this.store.select<User>('user')
+    this.user$ = this.store.select<User>('user') //Mit à jour quand le store est mit à jour
   }
 
   async onLogout() {

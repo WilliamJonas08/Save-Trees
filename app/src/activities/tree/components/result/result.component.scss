@@ -1,4 +1,4 @@
-.setup {
+.result {
   background: #fff;
   // box-shadow: 0 3px 4px rgba(0,0,0,.1);
   // border-radius: 3px;
@@ -16,7 +16,7 @@
   }
 
   .action {
-    margin: 30px 0 0;
+    margin: 30px 0;
     text-align: center;
 
     button {
@@ -36,11 +36,37 @@
         border-color: darken(#1c79b8, 5%);
       }
     }
-
   }
 
-  label {
-    display: block;
-    margin: 0;
+  .leaderboard {
+    width: 60%;
+    margin: auto;
+
+    .leaderboard_controls {
+      display: flex;
+      margin: 0, auto;
+      margin-bottom: 1rem;
+      text-align: center;
+
+      box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 3px;
+      border: 1px solid #c1cedb;
+
+      & a {
+        flex: 1;
+        padding: 10px;
+        background: #f5f9fd;
+        margin: 0, 5%;
+
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        &:hover {
+          background: darken(#f5f9fd, 6%);
+        }
+        &.active{
+          background: darken(#f5f9fd, 10%);
+        }
+      }
+    }
   }
 }

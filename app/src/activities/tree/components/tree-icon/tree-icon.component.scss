@@ -1,3 +1,6 @@
+:host ::ng-deep{
+  position: relative // IMPORTANT : cette propriété permet de permet lees composants child de manière ABSOLUTE par rapport au composant parent
+}
 .tree-icon__container {
 
   background: white;
@@ -9,7 +12,7 @@
   // box-shadow: 0 3px 4px green;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
 
-  position: relative;
+  position: absolute;
 
   cursor: pointer;
 

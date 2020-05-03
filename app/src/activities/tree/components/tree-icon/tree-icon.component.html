@@ -1,7 +1,10 @@
 <div class="tree-icon__container" (click)="iconTouched()" [ngStyle]="{ 
-    left: location.X,
-    top:location.Y
+    left: X,
+    top: Y,
+    display: display? 'flex' :'none'
 }">
+    <!-- ( location|async ).Y -->
+    <!-- *ngIf="display" -->
     <div class="tree-icon"></div>
 
 </div>

@@ -1,0 +1,25 @@
+// :host{
+.leaderboard-item {
+  width: 100%;
+  .wrapper {
+    width: 80%;
+    // height: 3rem;
+    margin: auto;
+    background: #f5f9fd;
+    display: flex;
+    padding: 10px;
+    text-align: center;
+
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    border: 1px solid #c1cedb;
+    .user-name {
+      flex: 2;
+    }
+    .user-score {
+      flex: 1;
+      border-left: 1px solid #c1cedb;
+    }
+  }
+}
+// }

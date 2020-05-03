@@ -4,20 +4,23 @@
         <div class="game">
             <!-- Mettre un second router outlet ici -->
 
-            <setup *ngIf="display==='setup'" (submitted)="beginGame($event)"></setup>
+            <!-- SETUP COMPONENT -->
+            <setup (submitted)="beginGame($event)" [ngStyle]="{display:display==='setup'? 'flex' : 'none'}"></setup>
 
-            <ng-template *ngIf="display==='plate'">
-                <counter [score]='score'></counter>
-
-                <div class="plate" >
-                    <div class="plate__wrapper">
-                        <!-- <tree-icon (touched)="onIconTouched()"></tree-icon> -->
-                        <ng-template #iconRef></ng-template> <!-- impossible : (touched)="onIconTouched()"-->
-                    </div>
+            <!-- PLATE COMPONENT -->
+            <counter [score]='result.score' [ngStyle]="{display:(display==='plate')||(display==='countdown')? 'flex' : 'none'}"></counter>
+            <div class="plate" [ngStyle]="{display:(display==='plate')||(display==='countdown')? 'flex' : 'none'}">
+                <div class="plate__wrapper">
+                    <!-- <tree-icon (touched)="onIconTouched()"></tree-icon> -->
+                    <ng-template #iconRef></ng-template> <!-- impossible : (touched)="onIconTouched()"-->
                 </div>
-            </ng-template>
+            </div>
+            <div class="countdown" [ngStyle]="{display:(display==='countdown')? 'flex' : 'none'}">
+                <span>{{countdown}}</span>
+            </div>
 
-            <!-- <result *ngIf="display==='setup'"></result> -->
+            <!-- RESULT COMPONENT -->
+            <result [result]='result' [leaderboard]="leaderboard" (replay)="playAgain()" [ngStyle]="{display:display==='result'? 'flex' : 'none'}"></result>
 
         </div>
 

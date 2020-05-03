@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   }
 
   async loginUser(event: FormGroup) {
-    const { email, password } = event.value //Object destructuring
+    const { email, password, pseudo } = event.value //Object destructuring
     try {
       await this.authService.loginUser(email, password) //don't need to call .then with async/await
       this.router.navigate(['/tree'])

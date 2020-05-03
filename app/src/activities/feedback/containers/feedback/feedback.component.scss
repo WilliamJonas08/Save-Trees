@@ -1,0 +1,94 @@
+// :host ::ng-deep {
+.error {
+  color: #a94442;
+  background: #f2dede;
+  border: 1px solid #e4b3b3;
+  border-radius: 2px;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 10px 0 0;
+}
+h1 {
+  margin: 0 0 25px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+button {
+  cursor: pointer;
+  outline: 0;
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid #1c79b8;
+  background: #39a1e7;
+  color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out; //transition when over
+  &:hover {
+    background: darken(#39a1e7, 5%);
+    border-color: darken(#1c79b8, 5%);
+  }
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+//   }
+
+.feedback-form {
+  background: #fff;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  border: 1px solid #c1cedb;
+  width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  &__action {
+    margin: 30px 0 0px;
+  }
+  label {
+    display: block;
+    margin: 0;
+  }
+  .email{
+    button{
+      border: 1px solid darken(#c1cedb,6%);
+      background: #c1cedb;
+      color: #fff;
+      padding: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      &:hover {
+        background: darken(#c1cedb, 4%);
+        // border-color: darken(#c1cedb, 5%);
+      }
+    }
+  }
+  .feedback {
+    margin-top: 10px;
+  }
+  input {
+    outline: 0;
+    font-size: 16px;
+    padding: 10px 15px;
+    margin: 0;
+    width:100%;
+    //  -webkit-fill-available;
+    background: #fafcfd;
+    color: #5777a8;
+    border: 1px solid #d1deeb;
+    text-align: center;
+    &::-webkit-input-placeholder {
+      color: #5777a8;
+    }
+    &[type="email"] {
+      border-radius: 3px 3px 0 0;
+    }
+    &[type="text"]{
+// Styles non réussis
+    }
+  }
+}

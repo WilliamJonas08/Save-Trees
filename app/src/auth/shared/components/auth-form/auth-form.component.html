@@ -11,6 +11,10 @@
             <input type="password" placeholder="Enter password" formControlName="password">
         </label>
 
+        <label *ngIf="type==='register'" class="pseudo">
+            <input type="text" placeholder="Enter your Pseudo" formControlName="pseudo">
+        </label>
+
         <div class="error" *ngIf="emailFormat">
             Invalid Email format
         </div>
@@ -29,6 +33,8 @@
             <ng-content select="a"></ng-content>
         </div>
 
-
+        
+        
     </form>
 </div>
+<!-- {{this.form.value|json}} -->
