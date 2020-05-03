@@ -11,6 +11,8 @@ export class CounterComponent implements OnInit {
   @Input()
   score:number
 
+  @Input()
+  timeCounter:number
 
   constructor() { }
 

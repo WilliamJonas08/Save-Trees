@@ -5,6 +5,8 @@
 }">
     <!-- ( location|async ).Y -->
     <!-- *ngIf="display" -->
-    <div class="tree-icon"></div>
-
+    <div class="tree-icon" [class.one]="value<=1" [class.two]="value===2" [class.three]="value===3"></div>
+    <!-- [ngClass]="{ 'planted': plant.planted}" -->
+    <!-- [class.one]="value<=1" [class.two]="value===2" [class.three]="value===3" -->
 </div>
+{{value}}

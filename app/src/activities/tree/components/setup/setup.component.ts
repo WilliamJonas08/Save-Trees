@@ -12,6 +12,8 @@ export class SetupComponent implements OnInit {
     type: 'easy'
   })
 
+  counter:number =50
+
   @Output()
   submitted = new EventEmitter<FormGroup>()
 
@@ -24,6 +26,13 @@ export class SetupComponent implements OnInit {
 
   onSubmit(){
     this.submitted.emit(this.form.value)
+  }
+
+  upBar(){
+    this.counter=this.counter+5
+  }
+  downBar(){
+    this.counter=this.counter-5
   }
 
 }

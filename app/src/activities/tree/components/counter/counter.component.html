@@ -1,3 +1,10 @@
 <div class="counter">
-Score : {{score}}
+    <div class="score">
+        {{score}}
+    </div>
+   <div class="progress-bar">
+       <mat-progress-bar [value]="timeCounter" ></mat-progress-bar>
+   </div>
 </div>
+<!-- <progress class="time-counter" max="100" [value]="timeCounter"></progress> -->
+<!-- TODO definir max ou alors la décroissance en fonction de la difficulté -->

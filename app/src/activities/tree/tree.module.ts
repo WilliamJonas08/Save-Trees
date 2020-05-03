@@ -17,6 +17,8 @@ import { SetupTypeComponent } from './components/setup-type/setup-type.component
 import { ResultComponent } from './components/result/result.component';
 import { LeaderboardItemComponent } from './components/leaderboard-item/leaderboard-item.component';
 
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 const ROUTES: Routes = [
   { path: '', component: TreeComponent },
@@ -36,7 +38,8 @@ const ROUTES: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(ROUTES),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressBarModule
   ],
   providers: [
     SharedModule,

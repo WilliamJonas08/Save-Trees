@@ -8,7 +8,7 @@
             <setup (submitted)="beginGame($event)" [ngStyle]="{display:display==='setup'? 'flex' : 'none'}"></setup>
 
             <!-- PLATE COMPONENT -->
-            <counter [score]='result.score' [ngStyle]="{display:(display==='plate')||(display==='countdown')? 'flex' : 'none'}"></counter>
+            <counter [score]='result.score' [timeCounter]="timeCounter" [ngStyle]="{display:(display==='plate')||(display==='countdown')? 'flex' : 'none'}"></counter>
             <div class="plate" [ngStyle]="{display:(display==='plate')||(display==='countdown')? 'flex' : 'none'}">
                 <div class="plate__wrapper">
                     <!-- <tree-icon (touched)="onIconTouched()"></tree-icon> -->

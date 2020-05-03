@@ -13,13 +13,18 @@ export class TreeIconComponent implements OnInit {
   X:string
   Y:string
 
+  initialValue:number // value returned by the icon when "destructed"
+  value:number //Nombre d'abres que représente l'icone
+
   display: boolean = true
 
   @Output()
-  touched = new EventEmitter<boolean>()
+  touched = new EventEmitter<number>()
 
   ngOnInit() {
     this.location.subscribe((location) => {
+      this.value=Math.floor(1+Math.random() * 3)
+      this.initialValue=this.value
       this.X=location.X
       this.Y=location.Y
       this.display = true
@@ -31,9 +36,12 @@ export class TreeIconComponent implements OnInit {
   // délai_restant
 
   iconTouched() {
-    this.display = false
-    // On ne met pas simplement un timeout ici pour remettre display = true car il y a un décalage temporel visible
-    this.touched.emit()
+    this.value--
+    if (this.value===0){ //si l'icone a été touché le bon nombre de fois
+      this.display = false
+      // On ne met pas simplement un timeout ici pour remettre display = true car il y a un décalage temporel visible
+      this.touched.emit(this.initialValue)
+    }
   }
 
 

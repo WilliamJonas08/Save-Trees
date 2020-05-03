@@ -36,7 +36,6 @@ export class ResultComponent implements OnChanges, OnInit {
     this._displayDifficulty = this.result.difficulty
   }
 
-
   playAgain() {
     this.replay.emit() //Mettre un score à battre ?
   }
