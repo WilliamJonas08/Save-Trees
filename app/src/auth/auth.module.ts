@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
+// Translation
+import {TranslateModule} from '@ngx-translate/core';
+
 import { SharedModule } from './shared/shared.module';
 
 // THIRD-PARTY MODULES
@@ -41,6 +44,7 @@ export const firebaseConfig: FirebaseAppConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    TranslateModule // Export it in SharedModules ? Enable to don't import this module in each module which imports the sharedModule
   ]
 })
 export class AuthModule { }

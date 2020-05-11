@@ -1,0 +1,38 @@
+<div class="setup_container">
+
+    <div class="title">
+        <!-- <span> -->
+            <!-- <h1>Nom du jeu de malade</h1> -->
+        <!-- </span> -->
+    </div>
+
+    <!-- <a > -->
+        <div class="click_zone"(click)="play()">
+<!-- click zone -->
+            <div class="play_button" translate>
+                play
+            </div>
+        </div>
+    <!-- </a> -->
+
+    <div class="difficulty"
+        [ngStyle]="{color:(currentDifficulty==='easy')? 'limegreen':(currentDifficulty==='moderate')? 'orange':'orangered'}"
+        >
+        {{currentDifficulty | translate}}
+        <!-- TODO display high score -->
+    </div>
+
+    <nav-bar></nav-bar>
+
+</div>
+
+<!-- <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <label>
+                <h1>Select Difficulty</h1>
+                <setup-type formControlName="type"></setup-type>
+            </label>
+    
+            <div class="action">
+                <button type="submit">PLAY</button>
+            </div>
+        </form> -->

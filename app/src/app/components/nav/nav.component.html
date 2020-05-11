@@ -1,7 +1,12 @@
 <div class="app-nav">
     <div class="wrapper">
-        <span>{{pseudo}}</span>
+        <span class="pseudo">{{pseudo}}</span>
         <a routerLink="tree" routerLinkActive="active">Tree</a>
         <a routerLink="feedback" routerLinkActive="active">Leave feedback</a>
+        <!-- <div class="app-header__user-info" *ngIf="user?.authenticated"> -->
+            <!-- safety check for the user beacause it's an observable and it might not be available -->
+            <span (click)="logoutUser()" class="logout"  *ngIf="user?.authenticated"></span>
+    
+        <!-- </div> -->
     </div>
 </div>

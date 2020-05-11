@@ -1,0 +1,152 @@
+.results_container {
+  position: relative;
+  // background: #fff;
+  background: url(../../../../assets/font-arbre.png) no-repeat;
+  background-color: lightblue;
+  background-position: center;
+  background-size: contain;
+  padding: 85px 30px 115px; //Pour mettre la navbar dans le padding
+  width: 100%;
+
+  height: 650px; //Computer
+  @media (max-width: 567px) {
+    height: 100%; //Phone
+  }
+
+  .title {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: #2f2f5d;
+    color: white;
+    padding: 18px;
+    justify-content: center;
+    text-transform: capitalize;
+
+    background: url(../../../../assets/title.png) no-repeat;
+    background-color: #2f2f5d;
+    background-position: center;
+    background-size: contain;
+  }
+
+  // h1 {
+  //   margin: 0 0 25px;
+  //   font-size: 20px;
+  //   font-weight: 600;
+  //   text-align: center;
+  // }
+
+  // .user_result {
+  //   background: white;
+  //   opacity: 0.9;
+  //   padding: 3%;
+  //   padding-bottom: 0; //margin du p qui décale
+  //   border: 2px solid #2f2f5d;
+  //   border-radius: 6px;
+  //   font-weight: 500;
+  //   color: #2f2f5d;
+  // }
+
+  // .action {
+  //   margin: 30px 0;
+  //   text-align: center;
+
+  //   button {
+  //     cursor: pointer;
+  //     outline: 0;
+  //     width: 30%;
+  //     border-radius: 2px;
+  //     border: 1px solid #1c79b8;
+  //     background: #39a1e7;
+  //     color: #fff;
+  //     padding: 10px;
+  //     font-size: 16px;
+  //     font-weight: 600;
+  //     transition: all 0.2s ease-in-out; //transition when over
+  //     &:hover {
+  //       background: darken(#39a1e7, 5%);
+  //       border-color: darken(#1c79b8, 5%);
+  //     }
+  //   }
+  // }
+  .play_button {
+    position: absolute;
+    left: 0%;
+    // top: 29%;
+    top: 70px;
+    bottom: 110px;
+    width: 100%;
+ 
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    font-size: 100px;
+    line-height: 300%;
+    letter-spacing: 8px;
+    color: wheat;
+    text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa,
+      0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+      0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+      0 20px 20px rgba(0, 0, 0, 0.15);
+    &:hover {
+      color: lightgrey;
+    }
+
+    &_text{
+      display: inline;
+      vertical-align: middle;
+      
+    }
+
+    p{
+      margin-bottom: 80px;
+    }
+  }
+
+  .score{
+    position: absolute;
+    left: 0%;
+    // top: 69%;
+    bottom: 193px;
+    width: 100%;
+    // height: 20%;
+
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    font-size: 39px;
+    letter-spacing: 4px;
+    color: #6161af;
+    text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa,
+      0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+      0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+      0 20px 20px rgba(0, 0, 0, 0.15);
+
+      .scoreText{
+        margin-bottom: 1em;
+        font-size: 30px;
+      }
+  }
+
+  .difficulty {
+    position: absolute;
+    left:0;
+    bottom: 145px;
+    width: 100%;
+
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 50px;
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa,
+      0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+      0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+      0 20px 20px rgba(0, 0, 0, 0.15);
+  }
+
+}

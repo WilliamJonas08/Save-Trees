@@ -1,9 +1,25 @@
-<div class="body">
-    <!-- Output dans le app-nav pour styliser le .body background -->
-    <app-header [user]="user$ |async" (logout)="onLogout()"></app-header>
-    <app-nav *ngIf="(user$ | async)?.authenticated" [pseudo]="(user$ | async)?.displayName"></app-nav>
-    <div class="wrapper">
-    <router-outlet></router-outlet>
-    <!-- {{user$|async|json}} -->
+
+<!-- Output dans le app-nav pour styliser le .body background -->
+<!-- <app-header [user]="user$ |async" (logout)="onLogout()"></app-header> -->
+<!-- <app-nav *ngIf="(user$ | async)?.authenticated" [pseudo]="(user$ | async)?.displayName" [user]="user$ |async" (logout)="onLogout()"></app-nav> -->
+
+<div class="row justify-content-center">
+    <div id="layout" class="col-12 col-sm-8">
+        <router-outlet></router-outlet>
+    </div>
 </div>
+
+<div [@step]="enteringGame" class="intro_container" *ngIf="enteringGame!==false">
+    <div class="intro">
+        <span class="title" >Save trees</span> 
+        <span class="title2">(and pandas)</span>
+    </div>
+
+    <!-- <div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container">
+        <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
+      </div> -->
 </div>
+
+<!-- {{user$|async|json}} -->
+
+

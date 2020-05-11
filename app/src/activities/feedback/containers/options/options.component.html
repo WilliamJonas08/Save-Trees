@@ -1,0 +1,113 @@
+<div class="options_container">
+
+    <div class="title">
+        <span class="img"></span>
+        <span>
+            <h1 translate>options</h1>
+        </span>
+    </div>
+
+    <!-- créer un component pour chaque section qui se déploie au click -->
+    <div class="itemsMenu_container">
+
+        <div class="controls" *ngIf="currentSection===''">
+            <button class="menu_button" (click)="display('information')">{{'informations'| translate}}</button>
+            <button class="menu_button" (click)="display('color')" translate>color theme</button>
+            <button class="menu_button" (click)="display('language')">{{'language' | translate }}</button>
+            <button class="menu_button" (click)="display('feedback')" translate>send feedback</button>
+            <button class="menu_button" (click)="display('logout')" translate>disconnection</button>
+        </div>
+        <!-- <div> -->
+
+        <!-- <div class="itemMenu_container" *ngIf="currentSection==='' || currentSection==='information'"> -->
+
+        <div class="information" *ngIf="currentSection==='information'">
+
+            <button class="menu_button" (click)="display('')">{{'back to options' | translate}}</button>
+
+            <div class="text">
+                <h2>Origine du jeu</h2>
+                <p>Le but initial de ce jeu était de pouvoir faire une bonne action tout en jouant et en te mesurant à tes
+                    amis. Les clicks récoltés devaient servir à planter des arbres avec Écosia. Malgré le fait qu'il aurait 
+                    permit de planter des arbres, il aurait eu malgré tout un impact carbone négatif dû aux recherches du navigateur 
+                    engendrées. J'espère que ce jeu sera un minimum plaisant même si il n'est pas encore terminé concernant le jeu en lui même.</p>
+
+                <h2>Explications du jeu</h2>
+                <p class="rules"> -> Cliquer sur le plus d'arbres avant la fin de la barre de temps</p>
+                <p class="rules"> - Cliquer sur un arbre te fait gagner du temps</p>
+                <p class="rules"> - 3 arbres = 3 clics = 3 x plus de points</p>
+                <p class="rules"> - Les combos te font gagner plus de points</p>
+                <p class="rules"> - Les haches te font perdre du temps et ne rapportent pas de points</p>
+
+                <!-- <p>Pour le moment, tout n'est pas encore fonctionnel mais nous espérons que bientôt, les clicks récoltés
+                    serviront à planter des arbres avec Écosia</p> -->
+                <p style="margin-top: 12px;">Bon jeu et bonne chance !</p>
+            </div>
+
+
+        </div>
+
+        <!-- </div> -->
+
+
+        <div *ngIf="currentSection==='color'">
+
+            <button class="menu_button" (click)="display('')" translate>back to options</button>
+
+            Nothing to display yet
+
+        </div>
+
+        <!-- <div class="itemMenu_container" *ngIf="currentSection==='' || currentSection==='language'"> -->
+        <!-- On créée un bouton pour chaque text de button car les directives ou les pipes le traduisent pas correctement au changement de langue sinon -->
+
+        <div *ngIf="currentSection==='language'">
+
+            <button class="menu_button" (click)="display('')" translate>back to options</button>
+
+            <div class="language">
+                <button (click)="swithLanguage('fr')" translate>
+                    <span class="french_img"></span>
+                    french
+                </button>
+                <button (click)="swithLanguage('en')" translate>
+                    <span class="english_img"></span>
+                    english
+                </button>
+            </div>
+
+        </div>
+
+        <!-- </div> -->
+
+        <!-- <div class="itemMenu_container" *ngIf="currentSection===''|| currentSection==='feedback'"> -->
+
+        <div class="feedback" *ngIf="currentSection==='feedback'">
+
+            <button class="menu_button" (click)="display('')" translate>back to options</button>
+
+            <div class="feedback_component">
+                <app-feedback></app-feedback>
+            </div>
+
+        </div>
+
+        <!-- </div> -->
+
+        <!-- <div class="itemMenu_container" *ngIf="currentSection===''|| currentSection==='logout'"> -->
+
+        <div *ngIf="currentSection==='logout'">
+
+            <button class="menu_button" (click)="display('')" translate>back to options</button>
+
+            <button class="logout" (click)="logoutUser()" translate>
+                <span class="logout_img"></span>
+                confirm logout
+            </button>
+        </div>
+        <!-- </div> -->
+    </div>
+
+    <nav-bar></nav-bar>
+</div>
+<!-- </div> -->

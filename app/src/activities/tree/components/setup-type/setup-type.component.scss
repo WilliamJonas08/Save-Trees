@@ -1,16 +1,16 @@
 .setup-type {
     display: flex;
     &__pane {
-      flex: 0 0 31.7%;
+      flex:1; // flex: 0 0 30%; //flex: 0 0 31.7%;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 15px;
-      margin: 0 15px 0 0;
+      padding: 3%; //15px;
+      // margin: 0 15px 0 0;  DEFINED IN NG STYLE
       background: #f5f9fd;
       border: 1px solid #d1deeb;
-      border-radius: 3px;
+      border-radius: 10px;
       transition: all .2s ease-in-out;
       &:hover {
         background: darken(#f5f9fd, 3%);

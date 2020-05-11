@@ -7,39 +7,48 @@ import { SharedModule } from '../shared/shared.module';
 
 // containers
 import { TreeComponent } from './containers/tree/tree.component';
+import { SetupComponent } from './containers/setup/setup.component';
+import { ResultComponent } from './containers/result/result.component';
+import { LeaderboardComponent } from './containers/leaderboard/leaderboard.component';
 
 // components
 import { CounterComponent } from './components/counter/counter.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { TreeIconComponent } from './components/tree-icon/tree-icon.component';
-import { SetupComponent } from './components/setup/setup.component';
 import { SetupTypeComponent } from './components/setup-type/setup-type.component';
-import { ResultComponent } from './components/result/result.component';
 import { LeaderboardItemComponent } from './components/leaderboard-item/leaderboard-item.component';
+import { FlameComponent } from './components/flame/flame.component';
 
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 const ROUTES: Routes = [
-  { path: '', component: TreeComponent },
+  { path: '', children:[
+    { path: 'setup', component: SetupComponent },
+    { path: 'game', component: TreeComponent },
+    { path: 'result', component: ResultComponent },
+    { path: 'leaderboard', component: LeaderboardComponent },
+    { path: '**', redirectTo: 'setup'},
+  ] },
 ];
 
 @NgModule({
   declarations: [
     TreeComponent,
     CounterComponent,
-    NavBarComponent,
     TreeIconComponent,
     SetupComponent,
     SetupTypeComponent,
     ResultComponent,
-    LeaderboardItemComponent
+    LeaderboardItemComponent,
+    FlameComponent,
+    LeaderboardComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(ROUTES),
     ReactiveFormsModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    SharedModule
   ],
   providers: [
     SharedModule,

@@ -1,0 +1,32 @@
+<div class="leaderboard_container">
+    <div class="title">
+        <span class="img"></span>
+        <span>
+            <h1 translate>leaderboard</h1>
+        </span>
+    </div>
+
+    <div class="leaderboard">
+        <div class="controls">
+            <a (click)="_displayDifficulty = 'easy'" [class.active]="_displayDifficulty === 'easy'" translate>easy</a>
+            <a (click)="_displayDifficulty = 'moderate'" [class.active]="_displayDifficulty === 'moderate'"
+                style="margin: 0 2%;" translate>moderate</a>
+            <a (click)="_displayDifficulty = 'hard'" [class.active]="_displayDifficulty === 'hard'" translate>hard</a>
+        </div>
+
+        <div class="results">
+            <leaderboard-item [displayName]="this.displayName"
+                *ngFor="let leaderboardResult of leaderboard[_displayDifficulty] let i=index" [data]="leaderboardResult"
+                [rank]="i+1">
+            </leaderboard-item>
+
+            <!-- <leaderboard-item class="unranked" [displayName]="this.displayName" [data]="leaderboard[_displayDifficulty][0]" [rank]="'-'">
+            </leaderboard-item> -->
+            <leaderboard-item class="unranked" *ngIf="userResultOutsideLeaderboard[_displayDifficulty]!==null" [displayName]="this.displayName" [data]="userResultOutsideLeaderboard[_displayDifficulty]" [rank]="'-'">
+            </leaderboard-item>
+        </div>
+
+    </div>
+
+    <nav-bar></nav-bar>
+</div>

@@ -2,13 +2,19 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { distinctUntilChanged, pluck } from 'rxjs/operators';
 
 import { User } from './auth/shared/services/auth.service';
+import { Result } from './activities/shared/services/tree/tree.service';
 
 export interface State{
     user:User
+    difficulty: string
+    result: Result
+    // TODO inject user best scores
 }
 
 const state : State = {
-    user : undefined
+    user : undefined,
+    difficulty : 'easy',
+    result: undefined //last played result
 }
 
 export class Store {

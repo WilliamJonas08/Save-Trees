@@ -1,0 +1,33 @@
+<div class="results_container">
+
+    <div class="title">
+        <!-- <span>
+            <h1>Nom du jeu de malade</h1>
+        </span> -->
+    </div>
+
+    <!-- <div class="user_result">
+        <p>Bravo tu as obtenu un score de <b>{{result.score}}</b> dans le mode <b>{{result.difficulty}}</b></p>
+        <p>En plus de ça tu fais déja partie des meilleurs dans la discipline !</p>
+    </div> -->
+    <!-- <p>Saches que ces {{result.score}} clicks t'auraient permis de planter X arbres à l'aide du moteur de recherche Ecosia</p> -->
+    <!-- <p>Mais malgré ça tu ne figures pas encore parmis les meilleurs ..</p> -->
+
+
+    <div class="play_button" (click)="playAgain()" translate>
+            retry
+    </div>
+
+    <div class="score">
+        <div class="scoreText" *ngIf="bestScore">new best score !</div>
+        Score: {{displayedScore}}
+    </div>
+
+    <div class="difficulty"
+        [ngStyle]="{color:(currentDifficulty==='easy')? 'limegreen':(currentDifficulty==='moderate')? 'orange':'orangered'}">
+        {{currentDifficulty | translate}}
+        <!-- TODO display high score -->
+    </div>
+
+    <nav-bar></nav-bar>
+</div>

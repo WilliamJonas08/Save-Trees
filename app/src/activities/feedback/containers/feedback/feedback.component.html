@@ -1,10 +1,23 @@
+<!-- <nav-bar></nav-bar> -->
+
 <div class="feedback-form">
+
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-        <h1>Feedback</h1>
+        <!-- <div class="title">
+            <span class="img"></span>
+            <span>
+                <h1>Feedback</h1>
+            </span>
+        </div> -->
 
-        <p>Vous pouvez nous faire part de vos retours, vos impressions, des éventuels bugs rencontrés, voire vos idées d'amélioration ici si vous le souhaitez !</p>
-        <p>Cela nous aidera beaucoup !</p>
+        <div class="text">
+            <p>Vous pouvez nous faire part de vos retours, vos impressions, des éventuels bugs rencontrés, voire vos
+                idées
+                d'amélioration ici si vous le souhaitez !</p>
+            <p>Cela nous aidera beaucoup !</p>
+        </div>
+
 
 
         <!-- <label class="email">
@@ -27,9 +40,17 @@
         <!-- <ng-content select=".error"></ng-content> -->
 
         <div class="feedback-form__action">
-            <button type="submit" [disabled]="form.invalid">Send feedback</button>
-        </div>     
-        
-        
+            <button type="submit" [disabled]="form.invalid">
+                <span class="disabled_img" *ngIf="form.invalid"></span>
+                Send feedback
+            </button>
+        </div>
+
+        <div class="text">
+
+            <p>Je sais que les icones débordent encore en bas lors du jeu en mode ordinateur (will be fixed soon)</p>
+        </div>
+
+
     </form>
 </div>

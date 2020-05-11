@@ -6,17 +6,19 @@ import { Routes, RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 
 import { FeedbackComponent } from './containers/feedback/feedback.component';
+import { OptionsComponent } from './containers/options/options.component';
 
 const ROUTES: Routes = [
-  { path: '', component: FeedbackComponent },
+  { path: '', component: OptionsComponent },
 ];
 
 @NgModule({
-  declarations: [FeedbackComponent],
+  declarations: [FeedbackComponent, OptionsComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    RouterModule.forChild(ROUTES)
+    RouterModule.forChild(ROUTES),
+    SharedModule
   ],
   providers:[
     SharedModule

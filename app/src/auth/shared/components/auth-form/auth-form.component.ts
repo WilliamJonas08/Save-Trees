@@ -50,4 +50,6 @@ export class AuthFormComponent implements OnInit {
     return (control.hasError("required") && control.touched)
   }
 
+// TODO: ajouter error max-length
+
 }

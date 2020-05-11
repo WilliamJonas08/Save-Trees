@@ -1,32 +1,29 @@
-<div class="tree-container">
-    <div class="wrapper">
+<!-- <div class="wrapper"> -->
 
-        <div class="game">
-            <!-- Mettre un second router outlet ici -->
+<!-- <div class="game"> -->
 
-            <!-- SETUP COMPONENT -->
-            <setup (submitted)="beginGame($event)" [ngStyle]="{display:display==='setup'? 'flex' : 'none'}"></setup>
+<div class="game-container" [class.mistake]="mistakeMode" [class.combo]="fireMode"
+    [@comboBorderPulse]="fireMode? comboEventTargetState:false" (@comboBorderPulse.done)="onComboPulseEventEnds($event)">
 
-            <!-- PLATE COMPONENT -->
-            <counter [score]='result.score' [timeCounter]="timeCounter" [ngStyle]="{display:(display==='plate')||(display==='countdown')? 'flex' : 'none'}"></counter>
-            <div class="plate" [ngStyle]="{display:(display==='plate')||(display==='countdown')? 'flex' : 'none'}">
-                <div class="plate__wrapper">
-                    <!-- <tree-icon (touched)="onIconTouched()"></tree-icon> -->
-                    <ng-template #iconRef></ng-template> <!-- impossible : (touched)="onIconTouched()"-->
-                </div>
-            </div>
-            <div class="countdown" [ngStyle]="{display:(display==='countdown')? 'flex' : 'none'}">
-                <span>{{countdown}}</span>
-            </div>
+    <counter [score]='result.score' [timeCounter]="timeCounter" [fireMode]="fireMode"
+        [axeTouchedSubject]="axeTouchedSubject" class="counter">
+        <!-- (@comboBorderPulse.done)="onAnimationBottomEventEnds($event)" -->
+    </counter>
+    <!-- [comboCounter]="comboCounter" -->
 
-            <!-- RESULT COMPONENT -->
-            <result [result]='result' [leaderboard]="leaderboard" (replay)="playAgain()" [ngStyle]="{display:display==='result'? 'flex' : 'none'}"></result>
+    <div class="plate">
 
-        </div>
+        <!-- ATTENTION : on place le template iconRef hors du plate_wrapper pour ne pas détecter les clicks sur plate_wrapper lorsque l'icon est cliqué (les icons sont positionnés de manière absolute de toute façon) -->
+        <ng-template #iconRef></ng-template> <!-- impossible : (touched)="onIconTouched()"-->
 
-        <!-- <div class="nav">
-            <nav-bar></nav-bar>
-        </div> -->
-
+        <div class="plate__wrapper" (click)="restartCombo()"></div>
     </div>
+
+    <div class="countdown" [ngStyle]="{display:displayCountdown? 'flex' : 'none'}">
+        <span>{{countdown}}</span>
+    </div>
+
 </div>
+
+<!-- </div> -->
+<!-- </div> -->

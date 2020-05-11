@@ -1,7 +1,9 @@
 <div class="auth-form">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-        <ng-content select="h1"></ng-content>
+        <div class="title">
+            <ng-content select="h1"></ng-content>
+        </div>
 
         <label>
             <input type="email" placeholder="Email adress" formControlName="email">
@@ -12,7 +14,7 @@
         </label>
 
         <label *ngIf="type==='register'" class="pseudo">
-            <input type="text" placeholder="Enter your Pseudo" formControlName="pseudo">
+            <input type="text" placeholder="Enter your Pseudo" formControlName="pseudo" maxlength="15">
         </label>
 
         <div class="error" *ngIf="emailFormat">
@@ -26,6 +28,7 @@
         <ng-content select=".error"></ng-content>
 
         <div class="auth-form__action">
+            <span class="disabled_img" *ngIf="form.invalid"></span>
             <ng-content select="button"></ng-content>
         </div>
         

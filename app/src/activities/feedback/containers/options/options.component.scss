@@ -1,0 +1,167 @@
+.options_container {
+  position: relative;
+
+  background: url(../../../../assets/font-arbre.png) no-repeat;
+  background-color: lightblue;
+  background-position: center;
+  background-size: contain;
+  padding: 85px 50px 115px; //Pour mettre la navbar dans le padding
+
+  height: 650px; //Computer
+  @media (max-width: 567px) {
+    height: 100%; //Phone
+  }
+
+  .title {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: #2f2f5d;
+    color: white;
+    padding: 18px;
+    justify-content: center;
+    text-transform: capitalize;
+    text-shadow: 0px 4px 0px rgba(0, 0, 0, 1);
+
+    h1 {
+      font-weight: bold;
+    }
+
+    .img {
+      margin-right: 3%;
+      background: url(../../../../assets/option.png) no-repeat;
+      background-size: contain;
+      width: 31px;
+      // height: 50px;
+    }
+  }
+
+  .itemsMenu_container {
+    text-align: center;
+    height: 100%;
+    // padding-bottom: 15px;
+
+    button {
+      padding: 10px;
+      font-weight: bold;
+      color: white;
+      // background: #6161af; //#2f2f5d;
+      box-shadow: 0 3px 4px rgba(0, 0, 0, 1);
+      border: 1px solid #2f2f5d;
+      border-radius: 3px;
+      text-transform: uppercase;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        background: lighten(#2f2f5d, 10%);
+      }
+    }
+
+    .menu_button {
+      width: 80%;
+      display: block;
+      margin: 0 auto 1em auto; //centrer horizontalement les boutons de menu
+      background: #6161af; //#2f2f5d;
+
+      @media (min-width: 567px) {
+        width: 50%;
+      }
+    }
+
+    .information {
+      height: 100%;
+      .text {
+        background: white;
+        opacity: 0.9;
+        padding: 3%;
+        padding-bottom: 0; //margin du p qui décale
+        border: 2px solid #2f2f5d;
+        border-radius: 6px;
+        font-weight: 500;
+        color: #2f2f5d;
+        margin: 0 auto;
+        width: 100%;
+
+        height: 85%;
+        overflow-y: auto;
+
+        .rules{
+          text-align: left;
+          margin-bottom: 0;
+        }
+
+        @media (min-width: 567px) {
+          width: 63%;
+        }
+      }
+      /* Hide scrollbar for IE and Edge */
+      -ms-overflow-style: none;
+    }
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .information::-webkit-scrollbar {
+      display: none;
+    }
+
+    .feedback {
+      margin: 0 auto;
+      width: 100%;
+      @media (min-width: 567px) {
+        width: 63%;
+      }
+
+      .feedback_component {
+        max-height: 100%;
+        overflow-y: auto;
+      }
+    }
+
+    .logout {
+      background: red;
+      padding: 15px;
+      margin: 15px auto;
+      display: flex;
+      justify-content: center;
+      text-transform: uppercase;
+
+      .logout_img {
+        background: url(../../../../assets/logout.svg) no-repeat;
+        background-size: contain;
+        background-position: top;
+        width: 20px;
+        height: 20px;
+        margin-right: 1em;
+      }
+    }
+
+    .language {
+      display: flex;
+      button {
+        flex: 1;
+        margin: 15px;
+        display: flex;
+        justify-content: center;
+        color: #2f2f5d;
+        background: whitesmoke;
+        .french_img {
+          background: url(../../../../assets/fr.jpg) no-repeat;
+          background-size: contain;
+          background-position: center;
+          width: 20px;
+          height: 20px;
+          margin-right: 0.5em;
+        }
+        .english_img {
+          background: url(../../../../assets/en.jpg) no-repeat;
+          background-size: contain;
+          background-position: center;
+          width: 20px;
+          height: 20px;
+          margin-right: 0.5em;
+        }
+      }
+    }
+  }
+}

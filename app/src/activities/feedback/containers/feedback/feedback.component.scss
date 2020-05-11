@@ -1,94 +1,146 @@
-// :host ::ng-deep {
-.error {
-  color: #a94442;
-  background: #f2dede;
-  border: 1px solid #e4b3b3;
-  border-radius: 2px;
-  padding: 8px;
-  font-size: 14px;
-  font-weight: 400;
-  margin: 10px 0 0;
-}
-h1 {
-  margin: 0 0 25px;
-  font-size: 20px;
-  font-weight: 600;
-  text-align: center;
-}
-button {
-  cursor: pointer;
-  outline: 0;
-  width: 100%;
-  border-radius: 2px;
-  border: 1px solid #1c79b8;
-  background: #39a1e7;
-  color: #fff;
-  padding: 10px;
-  font-size: 16px;
-  font-weight: 600;
-  transition: all 0.2s ease-in-out; //transition when over
-  &:hover {
-    background: darken(#39a1e7, 5%);
-    border-color: darken(#1c79b8, 5%);
-  }
-  &:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-  }
-}
-//   }
+:host {
+  max-height: 100%;
+  overflow-y: auto;
 
-.feedback-form {
-  background: #fff;
-  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
-  border: 1px solid #c1cedb;
-  width: 400px;
-  margin: 50px auto;
-  padding: 30px;
-  &__action {
-    margin: 30px 0 0px;
-  }
-  label {
-    display: block;
-    margin: 0;
-  }
-  .email{
-    button{
-      border: 1px solid darken(#c1cedb,6%);
-      background: #c1cedb;
-      color: #fff;
-      padding: 8px;
-      font-size: 14px;
-      font-weight: 600;
-      &:hover {
-        background: darken(#c1cedb, 4%);
-        // border-color: darken(#c1cedb, 5%);
+  .feedback-form {
+    // background: #fff;
+    // padding: 30px;
+    padding-top: 15px;
+
+    height: 100%; //Phone
+
+    @media (min-width: 568px) {
+      //Computer
+      height: auto;
+      box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 3px;
+    }
+
+    .title {
+      display: flex;
+
+      .img {
+        margin-right: 3%;
+        margin-top: 1%;
+        background: url(../../../../assets/feedback.png) no-repeat;
+        background-size: contain;
+        width: 50px;
+        height: 50px;
+      }
+      h1 {
+        margin: 0 0 25px;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
       }
     }
-  }
-  .feedback {
-    margin-top: 10px;
-  }
-  input {
-    outline: 0;
-    font-size: 16px;
-    padding: 10px 15px;
-    margin: 0;
-    width:100%;
-    //  -webkit-fill-available;
-    background: #fafcfd;
-    color: #5777a8;
-    border: 1px solid #d1deeb;
-    text-align: center;
-    &::-webkit-input-placeholder {
-      color: #5777a8;
+
+    .text {
+      background: white;
+      opacity: 0.9;
+      padding: 3%;
+      padding-bottom: 0; //margin du p qui décale
+      border: 2px solid #2f2f5d;
+      border-radius: 6px;
+      font-weight: 500;
+      color: #2f2f5d;
     }
-    &[type="email"] {
-      border-radius: 3px 3px 0 0;
+
+    .feedback {
+      margin-top: 10px;
+      display: block; //sert uniquement a elargir la taille de l'input
+
+      input {
+        outline: 0;
+        font-size: 16px;
+        color: #5777a8;
+
+        padding: 10px 15px;
+        width: 100%; //  -webkit-fill-available;
+
+        background: #fafcfd;
+        opacity: 0.9;
+        border: 2px solid #2f2f5d;
+        border-radius: 6px;
+
+        &::-webkit-input-placeholder {
+          color: #5777a8;
+          text-align: center;
+        }
+        // &[type="email"] {
+        //   border-radius: 3px 3px 0 0;
+        // }
+      }
     }
-    &[type="text"]{
-// Styles non réussis
+
+    &__action {
+      margin: 10px 0;
+
+      button {
+        cursor: pointer;
+        width: 100%;
+        padding: 10px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        background: #39a1e7;
+
+        display: flex;
+        justify-content: center;
+        
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 1);
+        border: 1px solid #2f2f5d;
+        border-radius: 3px;
+        transition: all 0.2s ease-in-out; //transition when over
+        outline: 0;
+        
+        &:hover {
+          background: darken(#39a1e7, 8%);
+          // border-color: darken(#1c79b8, 5%);
+        }
+
+        &:disabled {
+          // opacity: 0.4;
+          background: lighten(#2f2f5d, 10%);
+          cursor: not-allowed;
+        }
+
+        .disabled_img {
+          background: url(../../../../assets/forbidden.png);
+          background-position: center;
+          background-size: contain;
+          height: 20px;
+          width: 23px;
+          margin-right: 0.4em;
+        }
+      }
+    }
+
+    // .email {
+    //   button {
+    //     border: 1px solid darken(#c1cedb, 6%);
+    //     background: #c1cedb;
+    //     color: #fff;
+    //     padding: 8px;
+    //     font-size: 14px;
+    //     font-weight: 600;
+    //     &:hover {
+    //       background: darken(#c1cedb, 4%);
+    //       // border-color: darken(#c1cedb, 5%);
+    //     }
+    //   }
+    // }
+
+    .error {
+      color: #a94442;
+      background: #f2dede;
+      border: 1px solid #e4b3b3;
+      border-radius: 2px;
+      padding: 8px;
+      font-size: 14px;
+      font-weight: 400;
+      margin: 10px 0 0;
     }
   }
 }

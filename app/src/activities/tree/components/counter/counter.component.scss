@@ -1,39 +1,80 @@
 :host ::ng-deep {
-  background-color: limegreen;
-  position: relative;
-  
+  background-color: darken($color: #2f2f5d, $amount: 4%);
+  position: absolute; //rel
+  top: 0;//
+  height: 60px;//
+  width: 100%; //
+  display: flex;
+
   .counter {
     display: flex;
     margin: 0, auto;
-    padding: 15px;
     width: 100%;
-    // height:100%
-    // margin-bottom: 100px;
 
-    border: 1px solid #c1cedb;
-    
-    .score{
+    position: relative;
+
+    .score {
       text-align: center;
-      color: darken( green, 1%);
+      color: lightblue;
       font-weight: bold;
-      flex:1;
+      flex: 1;
       font-size: 25px;
+      line-height: 200%; //centrer verticalement le score
+      padding: 0 3%; // 15px;
+      border-right: 8px solid lightblue;
+      &.axeTouched {
+        color: darken(red, 1%);
+        border-right: 8px solid red;
+      }
+      &.fireMode {
+        border-right: 8px solid orange;
+      }
     }
 
-    .progress-bar{
-      flex:5
+    .progress-bar {
+      flex: 5;
+      padding: 1.3%;
+      background-color: darken($color: #2f2f5d, $amount: 4%);
+
+      .mat-progress-bar {
+        border-radius: 5px;
+        height: 100% !important;
+        transition-duration: 50ms; //essai pour limiter la transition de la progress bar
+
+        .mat-progress-bar-fill::after {
+          background-color: lighten(green, 10%);
+        }
+        .mat-progress-bar-buffer {
+          background-color: lighten($color: #2f2f5d, $amount: 15%);
+        }
+
+        &.midTime {
+          .mat-progress-bar-fill::after {
+            background-color: darken(orange, 10%);
+          }
+        }
+        &.endTime {
+          .mat-progress-bar-fill::after {
+            background-color: darken(red, 1%);
+          }
+        }
+
+        &.axeTouched {
+          .mat-progress-bar-fill::after {
+            background-color: darken(red, 1%);
+          }
+          .mat-progress-bar-buffer {
+            background-color: lighten(red, 10%);
+          }
+        }
+      }
+    }
+    .flame {
+      position: absolute;
+      left: 1%;
+      top: -25%;
+      // La taille de l'icone est gérée directement dans le composant lui même
+      // TODO : changer la taille de la flamme en fonction du nb de combo ? (attention il ne faudra pas changer que la taille de police )
     }
   }
-}
-::ng-deep .mat-progress-bar-fill::after {
-  background-color: darken( green, 1%);
-}
-
-::ng-deep .mat-progress-bar-buffer {
-  background-color:lighten(green, 10%);
-}
-
-::ng-deep .mat-progress-bar {
-  border-radius: 50px;
-  height: 20px !important;
 }

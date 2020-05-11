@@ -13,7 +13,7 @@
 
     position: relative;
 
-    span{
+    .pseudo{
       position: absolute;
       left: 0;
       top: 29%;
@@ -34,6 +34,28 @@
       &.active {
         color: #fff;
         border-bottom-color: #fff;
+      }
+    }
+    &__user-info {
+      position: absolute;
+      top: 0px;
+      top: -12px; //A AJUSTER EN FONCTION DE LA TAILLE DU LOGO
+      right: 0;
+      cursor: pointer;
+    }
+    .logout {
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+
+      background: url(../../../assets/logout.svg) no-repeat;
+      background-size: contain;
+      width: 24px;
+      height: 24px;
+      display: block;
+      opacity: 0.4;
+      &:hover {
+        opacity: 0.9;
       }
     }
   }

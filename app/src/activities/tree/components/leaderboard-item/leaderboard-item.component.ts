@@ -18,6 +18,9 @@ export class LeaderboardItemComponent implements OnInit {
   data: databaseResult
 
   @Input()
+  rank:number | any
+
+  @Input()
   displayName:string
 
   constructor() { }

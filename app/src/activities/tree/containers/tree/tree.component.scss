@@ -1,59 +1,87 @@
-.wrapper {
-  width: 700px; //50%
-  margin: 2rem auto;
-  display: flex;
+.game-container {
   position: relative; //si je dois placer le countdown de manière absolute
+  height: 100%;
 
-  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
-  border: 1px solid #c1cedb;
+  margin: 0 15px; //Pour afficher les border du game-container
+  @media (min-width: 567px) {//Si pas téléphone
+    margin: auto;
+    width: 565px; //UNIQUEMENT POUR GÉRER LE PETIT DÉCALAGE DU BACKGROUND QUE SON ABSENCE PROVOQUERAIT
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+  }
 
-  .game {
-    flex: 1; //occupe l'espace disponible
+  touch-action: none; //TTTTTEEEEEEEEEEEEEEESSSSSSSSSSSSSSSSSSSTTTTTTTTTTTTTTTT
+  
+  .plate {
+    // background: url(./../../../../assets/fond-sombre2.png) no-repeat;
+    background: url(../../../../assets/font-arbre_2.png) no-repeat;
+    background-color: lightblue;
+    background-position: center;
+    background-size: contain;
+    border: 12px solid darken($color: #2f2f5d, $amount: 4%);
+    width: 100%;
 
-    .plate {
-      padding: 1rem;
-      height: 550px; //TODO: dimensions identiques
-      background: #fafcfd;
-      // height: 50%;
-
-      .plate__wrapper {
-        width: 100%;
-        height: 100%;
-        // max-width: 100%;
-      }
+    height: 100%; //A modifier si on change la taille du counter
+    padding-top: 60px; //la taille du counter
+    @media (min-width: 567px) {
+      // background-size: contain; //Permet d'étendre le fond
+      height: 550px; //TODO: dimensions identiques //TODO : taille automatique pour ne pas déformer le background
+      width: 550px;
     }
 
-    .countdown{
-      width:60%;
-      height: 60%;
-      margin:0, auto;
-      box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
-      background: limegreen;
-      border-radius: 3px;
-      border: 1px solid #c1cedb;
+    .plate__wrapper {
+      width: 100%;
+      height: 100%;
+    }
 
-      z-index: 1;
-      position: absolute;
-      top:20%;
-      left:20%;
-
-      span{
-        font-size: 110px;
-        font-weight: bold;
-        text-align: center;
-        width: 100%;
-        height: 100%;
-        padding: 28%;
-        color: white;
-        line-height: normal;
-      }
+    .img {
+      width: 100%;
+      height: 100%;
     }
   }
 
-  .nav {
-    background: #8022b0;
-    border: 1px solid #c1cedb;
-    color: white
+  .countdown {
+    width: 100%;
+    // height: 60%;
+    // margin: 0, auto;
+    // box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+    // background: limegreen;
+    // border-radius: 3px;
+    // border: 1px solid #c1cedb;
+
+    z-index: 1;
+    position: absolute;
+    top: 37%;
+    left: 0%;
+
+    span {
+      font-size: 110px;
+      font-weight: bold;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      // padding: 28%;
+      color: lightblue;
+      line-height: normal;
+      text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+    }
+  }
+
+  // Control de la couleur des bordures
+  border: 8px solid lightblue;
+  .counter {
+    border-bottom: 8px solid lightblue;
+  }
+  &.mistake {
+    border: 8px solid red;
+    .counter {
+      border-bottom: 8px solid red;
+    }
+  }
+  &.combo {
+    border: 8px solid orange;
+    .counter {
+      border-bottom: 8px solid orange;
+    }
   }
 }

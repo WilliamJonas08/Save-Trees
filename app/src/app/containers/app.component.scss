@@ -1,4 +1,116 @@
-.body{
-    height:100%;
-    background-image: url("../../assets/forest.jpg");
+:host {
+  // height:100%;
+  // background-image: url("../../assets/forest.jpg");
+  background: lighten($color: #28284f, $amount: 30%);
+  overflow: hidden;
+  // background: #28284f;
+
+  .row {
+    // height: auto;
+    @media (max-width: 576px) {
+      height: 100%;
+    }
+  }
+
+  #layout {
+    max-width: 600px;
+    width: 100%;
+    height: 100%;
+
+    // background: white;
+    padding: 0;
+    // border-right: 15px solid #2f2f5d;
+    // border-left: 15px solid #2f2f5d;
+
+    @media (min-width: 576px) {
+      margin-top: 5rem;
+      height: auto;
+    }
+  }
+
+  .intro_container {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    .intro {
+      position: relative;
+      // z-index: 2;
+      background: url(../../assets/intro.png) no-repeat;
+      background-size: contain;
+      background-position: center;
+      // left: 25%;
+      top: 0;
+      width: 100%;
+      max-width: 400px; //si on agrandit l'écran
+      height: 70%;
+      margin: 0 auto;
+
+      font-size: 37px;
+      font-weight: bold;
+
+
+      .title {
+        position: absolute;
+        bottom: 20%;
+        width: 100%;
+        text-align: center;
+      }
+      .title2 {
+        position: absolute;
+        bottom: 15%;
+        width: 100%;
+        padding-left: 15%;
+        text-align: center;
+
+        font-size: 17px;
+        font-style: oblique;
+      }
+    }
+    // .save{
+    //   background: red;
+    //   :hover{
+    //     animation-duration: 4s;
+    //     animation-name: animate ;
+    //   }
+    // }
+  }
+
+  //   @keyframes animate {
+  //     from {
+  //       margin-left: 100%;
+  //       width: 300%;
+  //     }
+
+  //     to {
+  //       margin-left: 0%;
+  //       width: 100%;
+  //     }
+
+  //     // 0% {
+  //     //     transform: background-color(black);
+  //     //     transform:color(black);
+  //     // }
+
+  //     // 25% {
+  //     //   transform: background-color(black);
+  //     //   transform:color(white);
+
+  //     // }
+  //     // 85% {
+  //     //   transform: background-color(black);
+  //     //   transform:color(white);
+  //     //   transform: opacity(1);
+
+  //     // }
+
+  //     // 100% {
+  //     //   transform: background-color(black);
+  //     //   transform:color(white);
+  //     //   transform: opacity(1);
+  //     // }
+  // }
 }
